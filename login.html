@@ -41,6 +41,8 @@
         <h3>Cadastro</h3>
         <input type="text" placeholder="Login" id="login">
         <input type="password" placeholder="Senha" id="senha">
+        <input type="text" placeholder="Email" id="Email">
+        <input type="string" placeholder="Número de telefone" id="telefone">
         <input type="submit" onclick="logar(); return false">
 
     </form>
@@ -53,8 +55,10 @@
 
             var login = document.getElementById('login').value;
             var senha = document.getElementById('senha').value;
+            var Email = document.getElementById('Email').value;
+            var telefone = document.getElementById('telefone').value;
 
-            if(login == "admin" && senha == "admin"){
+            if(login == "admin" && senha == "admin" && email== "admin@gmail.com" && telefone == "12341234"){
                 alert('Sucesso');
                 location.href = "home.html";
             }else{
