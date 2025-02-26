@@ -4,40 +4,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro JS </title>
-
-    <style>
-
-        *{
-            box-sizing: border-box;
-        }
-
-        body{
-            width: 100%;
-            height: 100%;
-        }
-
-        form{
-            width: 300px;
-            margin: 200px auto;
-            text-align: center;
-        }
-
-        input{
-            display: block;
-            margin: 10px auto;
-            width: 250px;
-            height: 30px;
-        }
-
+    <title>Cadastro JS</title>
+    <link rel="stylesheet" href="login.css">
     </style>
 
 </head>
 <body>
     
 
-    <form>
-
+    <form> 
         <h3>Cadastro</h3>
         <input type="text" placeholder="Login" id="login">
         <input type="password" placeholder="Senha" id="senha">
@@ -52,13 +27,12 @@
 
 
         function logar(){
-
             var login = document.getElementById('login').value;
             var senha = document.getElementById('senha').value;
             var Email = document.getElementById('Email').value;
             var telefone = document.getElementById('telefone').value;
 
-            if(login == "admin" && senha == "admin" && email== "admin@gmail.com" && telefone == "12341234"){
+            if(login == "admin" && senha == "admin" && email == "admin@gmail.com" && telefone == "12341234"){
                 alert('Sucesso');
                 location.href = "home.html";
             }else{
@@ -68,6 +42,5 @@
         }
 
     </script>
-
 </body>
 </html>

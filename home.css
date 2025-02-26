@@ -15,7 +15,7 @@ nav {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     padding-top: 20px;
     align-items: center;
-    background-color: rgb(63, 63, 63);
+    background-color: rgb(177, 49, 49);
 }
 
 .logo {
@@ -34,9 +34,12 @@ nav {
     color: black;
     padding-left: 20px
 }
-
+nav a img {
+    width: 100px;
+    padding: 10px;
+  }
 footer {
-    background-color: rgb(43, 23, 23);]
+    background-color: rgb(0, 0, 0);
 }
 
 .footercontainer {
@@ -65,7 +68,7 @@ footer {
 
 /* Hover Effect on social media icons */
 .icons a:hover {
-    background-color: #111;
+    background-color: #383737;
     transition: 0.5s;
 }
 
