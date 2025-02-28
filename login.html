@@ -19,7 +19,6 @@
         <input type="text" placeholder="Email" id="Email">
         <input type="string" placeholder="Número de telefone" id="telefone">
         <input type="submit" onclick="logar(); return false">
-
     </form>
 
 
@@ -32,9 +31,9 @@
             var Email = document.getElementById('Email').value;
             var telefone = document.getElementById('telefone').value;
 
-            if(login == "admin" && senha == "admin" && email == "admin@gmail.com" && telefone == "12341234"){
+            if(login == "admin" && senha == "admin" && Email == "admin@gmail.com" && telefone == "12341234"){
                 alert('Sucesso');
-                location.href = "home.html";
+                location.href = "index.html";
             }else{
                 alert('Usuario ou senha incorretos');
             }
