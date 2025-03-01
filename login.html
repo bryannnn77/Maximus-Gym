@@ -6,25 +6,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro JS</title>
     <link rel="stylesheet" href="login.css">
-    </style>
-
 </head>
 <body>
-    
+<br></br>
+<br></br>
+<br></br>
+        <img src="https://linktr.ee/og/image/boxxgym.jpg" class="box">
 
-    <form> 
-        <h3>Cadastro</h3>
-        <input type="text" placeholder="Login" id="login">
-        <input type="password" placeholder="Senha" id="senha">
-        <input type="text" placeholder="Email" id="Email">
-        <input type="string" placeholder="Número de telefone" id="telefone">
-        <input type="submit" onclick="logar(); return false">
-    </form>
-
+        <form> 
+            <div class="h3">
+                <h3 style="color: rgb(255, 255, 255)">Cadastro</h3>
+        </div>
+            <input type="text" placeholder="Login" id="login">
+            <input type="password" placeholder="Senha" id="senha">
+            <input type="text" placeholder="Email" id="Email">
+            <input type="text" placeholder="Telefone" id="telefone">
+            <input type="submit" onclick="logar(); return false">
+        </form>
 
     <script>
-
-
         function logar(){
             var login = document.getElementById('login').value;
             var senha = document.getElementById('senha').value;
@@ -33,13 +33,11 @@
 
             if(login == "admin" && senha == "admin" && Email == "admin@gmail.com" && telefone == "12341234"){
                 alert('Sucesso');
-                location.href = "index.html";
+                location.href = "home.html";
             }else{
-                alert('Usuario ou senha incorretos');
+                alert('Usuário ou senha incorretos');
             }
-
         }
-
     </script>
 </body>
 </html>
