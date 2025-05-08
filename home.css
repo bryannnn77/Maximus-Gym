@@ -16,7 +16,7 @@ nav {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     padding-top: 20px;
     align-items: center;
-    background-color: rgb(221, 47, 47);
+    background-color: rgb(81, 81, 81);
 }
 
 .logo {
@@ -36,10 +36,11 @@ nav {
     padding-left: 20px
 }
 nav a img {
-    width: 100px;
+    width: 140px;
     padding: 10px;
     margin-right: 600px;
     margin-top: -15px;
+    border-radius: 500px;
   }
 footer {
     background-color: rgb(0, 0, 0);
