@@ -4,27 +4,56 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro JS</title>
+    <title>Cadastro - Maximus Gym</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-<br></br>
-<br></br>
-<br></br>
-        <img src="assets/preview.jpg" class="box">
-
-        <form> 
-            <div class="h3">
-                <h3 style="color: rgb(255, 255, 255)">Cadastro</h3>
+    <div class="container">
+        <div class="logo-container">
+            <img src="assets/Maximus Gym.png" alt="Maximus Gym Logo" class="logo">
         </div>
-            <input type="text" placeholder="Login" id="login">
-            <input type="password" placeholder="Senha" id="senha">
-            <input type="text" placeholder="Email" id="Email">
-            <input type="text" placeholder="Telefone" id="telefone">
-            <input type="submit" onclick="logar(); return false">
-        </form>
+        
+        <div class="form-container">
+            <form id="cadastroForm"> 
+                <div class="form-header">
+                    <h2>Cadastro</h2>
+                    <p>Junte-se à nossa comunidade fitness</p>
+                </div>
+                
+                <div class="input-group">
+                    <i class="fas fa-user"></i>
+                    <input type="text" placeholder="Login" id="login" required>
+                </div>
+                
+                <div class="input-group">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" placeholder="Senha" id="senha" required>
+                </div>
+                
+                <div class="input-group">
+                    <i class="fas fa-envelope"></i>
+                    <input type="email" placeholder="Email" id="Email" required>
+                </div>
+                
+                <div class="input-group">
+                    <i class="fas fa-phone"></i>
+                    <input type="tel" placeholder="Telefone" id="telefone" required>
+                </div>
+                
+                <button type="submit" class="submit-btn" onclick="logar(); return false">
+                    <span>Cadastrar</span>
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+                
+                <div class="login-link">
+                    Já tem uma conta? <a href="#">Faça login</a>
+                </div>
+            </form>
+        </div>
+    </div>
 
-    <script>  
+    <script>
         function logar(){
             var login = document.getElementById('login').value;
             var senha = document.getElementById('senha').value;
@@ -39,37 +68,6 @@
             }
         }
     </script>
-    <script type="module">
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-app.js";
-        import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-analytics.js";
-        const firebaseConfig = {
-          apiKey: "AIzaSyD3cEfQ77mfvUAWwHKBer6HzKUvPgTXWZ4",
-          authDomain: "sistema-de-academia-5b38e.firebaseapp.com",
-          projectId: "sistema-de-academia-5b38e",
-          storageBucket: "sistema-de-academia-5b38e.firebasestorage.app",
-          messagingSenderId: "795204207573",
-          appId: "1:795204207573:web:e7d6ed8b4167a1bb45735c",
-          measurementId: "G-X2WL94RN2Q"
-        };
-      
-        const app = initializeApp(firebaseConfig);
-        const analytics = getAnalytics(app);
-
-        set (ref(DB, 'usuarios/'+ login),{
-            login: login,
-            senha: senha,
-            telefone: telefone,
-            email: email
-        })
-        then(() => {
-            alert("usuário cadastrado com sucesso!", error);
-            location.hfref="home";
-        })
-        .catch((error) =>{
-            console.error("erro ao salvar:", error);
-            alert("erro ao cadastrar.");
-        });    
-
-        </script>
+    
 </body>
 </html>
