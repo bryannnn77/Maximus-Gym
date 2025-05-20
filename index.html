@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro - Maximus Gym</title>
+    <title>Maximus Gym</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="script" href="script.js">
 </head>
 <body>
     <div class="container">
@@ -28,32 +29,78 @@
                 
                 <div class="input-group">
                     <i class="fas fa-lock"></i>
-                    <input type="password" placeholder="Senha" id="senha" required>
+                    <input type="password" placeholder="Senha (mínimo 8 caracteres)" id="senha" required>
+                    <small class="error-message" id="senha-error"></small>
                 </div>
                 
                 <div class="input-group">
                     <i class="fas fa-envelope"></i>
                     <input type="email" placeholder="Email" id="Email" required>
+                    <small class="error-message" id="email-error"></small>
                 </div>
                 
                 <div class="input-group">
                     <i class="fas fa-phone"></i>
-                    <input type="tel" placeholder="Telefone" id="telefone" required>
+                    <input type="tel" placeholder="Telefone (apenas números)" id="telefone" required>
+                    <small class="error-message" id="telefone-error"></small>
                 </div>
                 
-                <button type="submit" class="submit-btn" onclick="logar(); return false">
+                <button type="submit" class="submit-btn" onclick="validarFormulario(event)">
                     <span>Cadastrar</span>
                     <i class="fas fa-arrow-right"></i>
                 </button>
                 
                 <div class="login-link">
-                    Já tem uma conta? <a href="#">Faça login</a>
+                    Já tem uma conta? <a href="#" onclick="irParaLogin()">Faça login</a>
                 </div>
             </form>
         </div>
     </div>
 
     <script>
+        function irParaLogin() {
+            window.location.href = "login.html";
+        }
+
+        function validarFormulario(event) {
+            event.preventDefault();
+            
+            // Limpar mensagens de erro anteriores
+            document.getElementById('senha-error').textContent = '';
+            document.getElementById('email-error').textContent = '';
+            document.getElementById('telefone-error').textContent = '';
+            
+            // Obter valores dos campos
+            const senha = document.getElementById('senha').value;
+            const email = document.getElementById('Email').value;
+            const telefone = document.getElementById('telefone').value;
+            
+            let valido = true;
+            
+            // Validar senha (mínimo 8 caracteres)
+            if (senha.length < 8) {
+                document.getElementById('senha-error').textContent = 'A senha deve ter no mínimo 8 caracteres';
+                valido = false;
+            }
+            
+            // Validar email (deve conter @)
+            if (!email.includes('@')) {
+                document.getElementById('email-error').textContent = 'Por favor, insira um email válido';
+                valido = false;
+            }
+            
+            // Validar telefone (apenas números)
+            if (!/^\d+$/.test(telefone)) {
+                document.getElementById('telefone-error').textContent = 'O telefone deve conter apenas números';
+                valido = false;
+            }
+            
+            // Se tudo estiver válido, prosseguir com o cadastro
+            if (valido) {
+                logar();
+            }
+        }
+
         function logar(){
             var login = document.getElementById('login').value;
             var senha = document.getElementById('senha').value;
@@ -61,13 +108,15 @@
             var telefone = document.getElementById('telefone').value;
 
             if(login == "admin" && senha == "admin" && Email == "admin@gmail.com" && telefone == "12341234"){
-                alert('Sucesso');
+                alert('Cadastro realizado com sucesso!');
                 location.href = "home.html";
             }else{
-                alert('Usuário ou senha incorretos');
+                alert('Cadastro realizado com sucesso! (simulação)');
+                // Em uma aplicação real, aqui seria o código para cadastrar no Firebase
             }
         }
     </script>
     
+    <!-- Firebase scripts permanecem os mesmos -->
 </body>
 </html>

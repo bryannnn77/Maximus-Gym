@@ -8,7 +8,7 @@
 }
 
 body {
-    background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
+    background: linear-gradient(135deg, #ff0000, #2d2d2d);
     min-height: 100vh;
     display: flex;
     justify-content: center;
@@ -156,4 +156,20 @@ body {
     .form-container {
         padding: 30px;
     }
+}   
+.error-message {
+    color: #ff416c;
+    font-size: 12px;
+    margin-top: 5px;
+    display: block;
+    text-align: left;
+    padding-left: 45px;
+}
+
+.input-group input.error {
+    border-color: #ff416c;
+}
+
+.input-group input.valid {
+    border-color: #4CAF50;
 }
