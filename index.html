@@ -7,19 +7,18 @@
     <title>Maximus Gym</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="script" href="script.js">
 </head>
 <body>
     <div class="container">
         <div class="logo-container">
-            <img src="assets/Maximus Gym.png" alt="Maximus Gym Logo" class="logo">
+            <img src="assets/Maximus Gymm.png" alt="Maximus Gym Logo" class="logo">
         </div>
         
         <div class="form-container">
-            <form id="cadastroForm"> 
+            <form id="cadastroForm">
                 <div class="form-header">
                     <h2>Cadastro</h2>
-                    <p>Junte-se à nossa comunidade fitness</p>
+            <p>Junte-se à nossa comunidade fitness</p>
                 </div>
                 
                 <div class="input-group">
@@ -45,78 +44,18 @@
                     <small class="error-message" id="telefone-error"></small>
                 </div>
                 
-                <button type="submit" class="submit-btn" onclick="validarFormulario(event)">
+                <button type="submit" class="submit-btn">
                     <span>Cadastrar</span>
                     <i class="fas fa-arrow-right"></i>
                 </button>
                 
                 <div class="login-link">
-                    Já tem uma conta? <a href="#" onclick="irParaLogin()">Faça login</a>
+                    Já tem uma conta? <a href="\Meu sistema\pages\Page 1-Login\login.html">Faça login</a>
                 </div>
             </form>
         </div>
     </div>
 
-    <script>
-        function irParaLogin() {
-            window.location.href = "login.html";
-        }
-
-        function validarFormulario(event) {
-            event.preventDefault();
-            
-            // Limpar mensagens de erro anteriores
-            document.getElementById('senha-error').textContent = '';
-            document.getElementById('email-error').textContent = '';
-            document.getElementById('telefone-error').textContent = '';
-            
-            // Obter valores dos campos
-            const senha = document.getElementById('senha').value;
-            const email = document.getElementById('Email').value;
-            const telefone = document.getElementById('telefone').value;
-            
-            let valido = true;
-            
-            // Validar senha (mínimo 8 caracteres)
-            if (senha.length < 8) {
-                document.getElementById('senha-error').textContent = 'A senha deve ter no mínimo 8 caracteres';
-                valido = false;
-            }
-            
-            // Validar email (deve conter @)
-            if (!email.includes('@')) {
-                document.getElementById('email-error').textContent = 'Por favor, insira um email válido';
-                valido = false;
-            }
-            
-            // Validar telefone (apenas números)
-            if (!/^\d+$/.test(telefone)) {
-                document.getElementById('telefone-error').textContent = 'O telefone deve conter apenas números';
-                valido = false;
-            }
-            
-            // Se tudo estiver válido, prosseguir com o cadastro
-            if (valido) {
-                logar();
-            }
-        }
-
-        function logar(){
-            var login = document.getElementById('login').value;
-            var senha = document.getElementById('senha').value;
-            var Email = document.getElementById('Email').value;
-            var telefone = document.getElementById('telefone').value;
-
-            if(login == "admin" && senha == "admin" && Email == "admin@gmail.com" && telefone == "12341234"){
-                alert('Cadastro realizado com sucesso!');
-                location.href = "home.html";
-            }else{
-                alert('Cadastro realizado com sucesso! (simulação)');
-                // Em uma aplicação real, aqui seria o código para cadastrar no Firebase
-            }
-        }
-    </script>
-    
-    <!-- Firebase scripts permanecem os mesmos -->
+    <script src="script.js"></script>
 </body>
 </html>
