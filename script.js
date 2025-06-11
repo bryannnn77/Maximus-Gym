@@ -40,9 +40,9 @@ function validarFormulario() {
 
 function realizarCadastro() {
     alert('Cadastro realizado com sucesso!');
-    window.location.href = "/Meu%20sistema/pages/Page%201-Login/login.html";
+    window.location.href = "pages/Page1/login.html";
 }
 
 function irParaLogin() {
-    window.location.href = "/Meu%20sistema/pages/Page%201-Login/login.html";
+    window.location.href = "pages/Page1/login.html";
 }
