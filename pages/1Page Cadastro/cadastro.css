@@ -30,24 +30,9 @@ body {
     flex: 1;
     background: linear-gradient(to right, #ff416c, #ff4b2b);
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 40px;
-    text-align: center;
-    color: white;
-}
-
-.logo-container h2 {
-    margin-top: 20px;
-    font-weight: 600;
-    font-size: 24px;
-}
-
-.logo-container p {
-    margin-top: 10px;
-    font-size: 14px;
-    opacity: 0.9;
 }
 
 .logo {
@@ -107,38 +92,6 @@ body {
     outline: none;
 }
 
-.options {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-}
-
-.remember-me {
-    display: flex;
-    align-items: center;
-    font-size: 14px;
-    color: #666;
-    cursor: pointer;
-}
-
-.remember-me input {
-    margin-right: 8px;
-    accent-color: #ff416c;
-}
-
-.forgot-password {
-    color: #ff416c;
-    text-decoration: none;
-    font-size: 14px;
-    transition: color 0.3s ease;
-}
-
-.forgot-password:hover {
-    color: #ff4b2b;
-    text-decoration: underline;
-}
-
 .submit-btn {
     width: 100%;
     padding: 12px;
@@ -154,6 +107,7 @@ body {
     justify-content: center;
     gap: 10px;
     transition: all 0.3s ease;
+    margin-top: 20px;
 }
 
 .submit-btn:hover {
@@ -170,36 +124,23 @@ body {
     transform: translateX(5px);
 }
 
-.register-link {
+.login-link {
     text-align: center;
     margin-top: 20px;
     font-size: 14px;
     color: #666;
 }
 
-.register-link a {
+.login-link a {
     color: #ff416c;
     text-decoration: none;
     font-weight: 500;
     transition: color 0.3s ease;
 }
 
-.register-link a:hover {
+.login-link a:hover {
     color: #ff4b2b;
     text-decoration: underline;
-}
-
-.error-message {
-    color: #ff416c;
-    font-size: 12px;
-    margin-top: 5px;
-    display: block;
-    text-align: left;
-    padding-left: 45px;
-}
-
-.input-group input.error {
-    border-color: #ff416c;
 }
 
 /* Responsividade */
@@ -215,4 +156,20 @@ body {
     .form-container {
         padding: 30px;
     }
+}   
+.error-message {
+    color: #ff416c;
+    font-size: 12px;
+    margin-top: 5px;
+    display: block;
+    text-align: left;
+    padding-left: 45px;
+}
+
+.input-group input.error {
+    border-color: #ff416c;
+}
+
+.input-group input.valid {
+    border-color: #4CAF50;
 }

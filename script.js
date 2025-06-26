@@ -1,48 +1,54 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const cadastroForm = document.getElementById('cadastroForm');
+    const loginForm = document.getElementById('loginForm');
     
-    cadastroForm.addEventListener('submit', function(event) {
-        event.preventDefault();
-        validarFormulario();
-    });
+    if (loginForm) {
+        loginForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+            validarLogin();
+        });
+    }
 });
 
-function validarFormulario() {
-    document.getElementById('senha-error').textContent = '';
-    document.getElementById('email-error').textContent = '';
-    document.getElementById('telefone-error').textContent = '';
+function validarLogin() {
+    const login = document.getElementById('login')?.value.trim();
+    const senha = document.getElementById('senha')?.value.trim();
+    const errorElement = document.getElementById('login-error');
     
-    const senha = document.getElementById('senha').value;
-    const email = document.getElementById('Email').value;
-    const telefone = document.getElementById('telefone').value;
+    if (!errorElement) return;
     
-    let valido = true;
+    errorElement.textContent = '';
     
-    if (senha.length < 8) {
-        document.getElementById('senha-error').textContent = 'A senha deve ter no mínimo 8 caracteres';
-        valido = false;
+    if (!login || !senha) {
+        errorElement.textContent = 'Por favor, preencha todos os campos';
+        return;
     }
     
-    if (!email.includes('@')) {
-        document.getElementById('email-error').textContent = 'Por favor, insira um email válido';
-        valido = false;
-    }
+    const usuariosValidos = {
+        'admin': 'admin',
+        'usuario': 'senha123',
+        'teste': 'teste123'  
+    };
     
-    if (!/^\d+$/.test(telefone)) {
-        document.getElementById('telefone-error').textContent = 'O telefone deve conter apenas números';
-        valido = false;
+    if (usuariosValidos[login] && usuariosValidos[login] === senha) {
+        const submitBtn = document.querySelector('.submit-btn');
+        if (submitBtn) {
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> <span>Entrando...</span>';
+            submitBtn.disabled = true;
+        }
+        
+        setTimeout(() => {
+            window.location.href = "pages/2Page Home/home.html";
+            // Alternativa: window.location.replace("pages/2Page Home/home.html");
+        }, 1000);
+    } else {
+        errorElement.textContent = 'Credenciais inválidas. Tente novamente.';
+        
+        document.getElementById('login')?.classList.add('error');
+        document.getElementById('senha')?.classList.add('error');
+        
+        setTimeout(() => {
+            document.getElementById('login')?.classList.remove('error');
+            document.getElementById('senha')?.classList.remove('error');
+        }, 2000);
     }
-    
-    if (valido) {
-        realizarCadastro();
-    }
-}
-
-function realizarCadastro() {
-    alert('Cadastro realizado com sucesso!');
-    window.location.href = "pages/Page 1-Login/login.html";
-}
-
-function irParaLogin() {
-    window.location.href = "pages/Page 1-Login/login.html";
 }

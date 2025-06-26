@@ -1,8 +1,7 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-Br">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Maximus Gym</title>
     <link rel="stylesheet" href="style.css">
@@ -11,14 +10,16 @@
 <body>
     <div class="container">
         <div class="logo-container">
-            <img src="assets/Maximus Gymm.png" alt="Maximus Gym Logo" class="logo">
+            <img src="pages/1Page Cadastro/assets/Maximus Gymm.png" alt="Maximus Gym Logo" class="logo">
+            <h2>Bem-vindo de volta!</h2>
+            <p>Acesse sua conta para continuar sua jornada fitness</p>
         </div>
         
         <div class="form-container">
-            <form id="cadastroForm">
+            <form id="loginForm">
                 <div class="form-header">
-                    <h2>Cadastro</h2>
-            <p>Junte-se à nossa comunidade fitness</p>
+                    <h2>Login</h2>
+                    <p>Entre com suas credenciais</p>
                 </div>
                 
                 <div class="input-group">
@@ -28,34 +29,28 @@
                 
                 <div class="input-group">
                     <i class="fas fa-lock"></i>
-                    <input type="password" placeholder="Senha (mínimo 8 caracteres)" id="senha" required>
-                    <small class="error-message" id="senha-error"></small>
+                    <input type="password" placeholder="Senha" id="senha" required>
+                    <small class="error-message" id="login-error"></small>
                 </div>
                 
-                <div class="input-group">
-                    <i class="fas fa-envelope"></i>
-                    <input type="email" placeholder="Email" id="Email" required>
-                    <small class="error-message" id="email-error"></small>
-                </div>
-                
-                <div class="input-group">
-                    <i class="fas fa-phone"></i>
-                    <input type="tel" placeholder="Telefone (apenas números)" id="telefone" required>
-                    <small class="error-message" id="telefone-error"></small>
+                <div class="options">
+                    <label class="remember-me">
+                        <input type="checkbox" id="remember">
+                        <span>Lembrar-me</span>
+                    </label>
+                    <a href="#" class="forgot-password">Esqueci minha senha</a>
                 </div>
                 
                 <button type="submit" class="submit-btn">
-                    <span>Cadastrar</span>
+                    <span>Entrar</span>
                     <i class="fas fa-arrow-right"></i>
                 </button>
-                
-                <div class="login-link">
-                    Já tem uma conta? <a href="pages/Page 1-Login/login.html">Faça login</a>
+                <div class="register-link">
+                    Não tem uma conta? <a href="pages/1Page Cadastro/cadastro.html">Cadastre-se</a>
                 </div>
             </form>
         </div>
     </div>
-
     <script src="script.js"></script>
 </body>
 </html>
